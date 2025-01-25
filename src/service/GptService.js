@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const getCodeFromPrompt = async (prompt) => {
-    const api_key = 'api_key'
+    const api_key = 'AIzaSyCyOK7gx-R7839qeVwLR9-iJG2-GUn4tGQ'
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${api_key}`
 
     const body = {"contents": [
@@ -20,5 +20,6 @@ export const getCodeFromPrompt = async (prompt) => {
 
 
     const response = await axios.post(url, body)
+    console.log(response.data.candidates[0].content.parts[0].text)
     return response.data.candidates[0].content.parts[0].text.replace(/```mermaid|```/g, '');
 }

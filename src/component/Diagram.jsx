@@ -25,12 +25,11 @@ const Diagram = ({ chart, isCode }) => {
     initializeMermaid();
   }, [chart]);
   
-  console.log(chart)
   return  <>
     {
       isCode ? <CodeWrapper>
         <CardContent>
-          <Typography sx={{whiteSpace:'pre-wrap'}}>{chart}</Typography>
+          <Typography sx={{whiteSpace:'pre-wrap', overflowY: 'auto', height: "calc(100vh - 250px)"}}>{chart}</Typography>
         </CardContent>
         </CodeWrapper> : 
         <DiagramWrapper dangerouslySetInnerHTML={{ __html: diagram }} />

@@ -41,7 +41,8 @@ export const OutputCardWrapper = styled(DefaultCard)`
 
 export const DiagramWrapper = styled(DefaultCard)`
     width:90%;
-    height:80%;
+    height:80vh;
+    max-height:80% !important;
     padding:20px;
     display:flex;
     justify-content:center;
@@ -51,8 +52,8 @@ export const DiagramWrapper = styled(DefaultCard)`
 export const CodeWrapper = styled(DiagramWrapper)`
     background-color:#323132 !important;
     color:white !important;
-    max-height:80% !important;
-    overflow-y:auto !important;
+   
+    overflow-y: auto !important;
 `;
 
 export const TitleWrapper = styled(Typography)`
